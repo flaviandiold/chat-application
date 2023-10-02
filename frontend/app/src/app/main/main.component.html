@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="text-center mt-5">
+    <h3>All Registered Users</h3>
+  </div>
+  <div class="row mt-5">
+    <div
+      *ngFor="let presentation of alluser"
+      class="user col-2"
+      (click)="goToChat(presentation.userName)"
+    >
+      <div *ngIf="presentation.userName != check; else dontShow">
+        {{ presentation.userName }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #dontShow>Self</ng-template>
